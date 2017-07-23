@@ -8,7 +8,7 @@ import java.lang.reflect.Type;
 /**
  * Created by song on 2017/7/22.
  */
-public abstract class BaseAction<T> implements ModelDriven<T> {
+public abstract class BaseAction<T> extends UploadBaseAction implements ModelDriven<T> {
 
     private T t;
 

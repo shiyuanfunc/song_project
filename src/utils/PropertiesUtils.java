@@ -11,6 +11,7 @@ public class PropertiesUtils {
     public static boolean loadFile(){
         try {
             //property.load(PropertiesUtils.class.getClassLoader().getResourceAsStream(fileName));
+            //Thread.currentThread().getContextClassLoader().getResource  ("jdbc.properties").getPath();
             InputStream inputStream  = new BufferedInputStream(new FileInputStream("resources/jdbc.properties"));
             property.load(inputStream);
             inputStream.close();

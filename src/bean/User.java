@@ -4,11 +4,22 @@ package bean;
  * Created by song on 2017/7/18.
  */
 public class User {
+
+    private Integer id;
+
     private String userName;
 
     private String passWord;
 
-    private String ImgPath;
+    private String imgPath;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUserName() {
         return userName;
@@ -27,19 +38,20 @@ public class User {
     }
 
     public String getImgPath() {
-        return ImgPath;
+        return imgPath;
     }
 
     public void setImgPath(String imgPath) {
-        ImgPath = imgPath;
+        imgPath = imgPath;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
                 ", passWord='" + passWord + '\'' +
-                ", ImgPath='" + ImgPath + '\'' +
+                ", ImgPath='" + imgPath + '\'' +
                 '}';
     }
 }

@@ -6,11 +6,25 @@
 <struts>
     <constant name="struts.devMode" value="true"/>
     <package name="user" extends="struts-default">
-        <action name="regist" class="Action.UserAction">
+        <action name="regist" class="Action.UserAction" method="regist">
             <param name="savePath">/UserImg</param>
-            <result>/index.jsp</result>
+            <result>/refresh.jsp</result>
             <result name="input">/error.jsp</result>
         </action>
 
+        <action name="index" class="Action.UserAction" method="showAllUser">
+            <result name="success">/index.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="download" class="Action.UserAction">
+            <param name="savePath">/UserImg</param>
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="contentDisposition">attachment;fileName="${userName}"</param>
+                <param name="inputName">downloadFile</param>
+                <param name="bufferSize">4096</param>
+            </result>
+        </action>
     </package>
 </struts>

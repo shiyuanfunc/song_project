@@ -60,9 +60,9 @@ public class UploadBaseAction {
             while ((len = fis.read(buffer)) > 0) {
                 fos.write(buffer, 0, len);
             }
-            return "success";
+            return savePath+"/"+getUploadFileName();
         } else {
-            return "error_path";
+            return "error";
         }
     }
 }
