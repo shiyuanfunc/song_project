@@ -11,8 +11,10 @@ import java.sql.Connection;
 public class test {
     public static void main(String[] args) throws Exception {
         User user = new User();
+        /*Connection conn = DBUtils.getConnection();
+        System.out.println(conn);*/
         String sql = "insert into webtest_user(id,userName,password,ImgPath) values(webtest_user_seq.nextval,:userName,:passWord,:ImgPath) ";
-        int len =  DBUtils.insert(user,sql);
+        int len =  DBUtils.insert(sql,user);
         System.out.println(len);
     }
 

@@ -10,11 +10,11 @@ public class PropertiesUtils {
     static Properties property = new Properties();
     public static boolean loadFile(){
         try {
-            //property.load(PropertiesUtils.class.getClassLoader().getResourceAsStream(fileName));
+            property.load(PropertiesUtils.class.getResourceAsStream("/jdbc.properties"));
             //Thread.currentThread().getContextClassLoader().getResource  ("jdbc.properties").getPath();
-            InputStream inputStream  = new BufferedInputStream(new FileInputStream("resources/jdbc.properties"));
-            property.load(inputStream);
-            inputStream.close();
+            //InputStream inputStream  = new BufferedInputStream(new FileInputStream("resources/jdbc.properties"));
+            //property.load(inputStream);
+            //inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
             return false;

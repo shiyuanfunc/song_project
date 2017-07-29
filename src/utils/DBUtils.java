@@ -28,15 +28,15 @@ public class DBUtils {
     public static Connection getConnection() {
         Connection conn = tt.get();
         if (conn == null) {
-            //PropertiesUtils.loadFile();
-            String url = "jdbc:oracle:thin:@//localhost:1521/orcl";
+            PropertiesUtils.loadFile();
+            /*String url = "jdbc:oracle:thin:@//localhost:1521/orcl";
              String  username = "oracle";
              String  password = "oreacle";
-            String driver = "oracle.jdbc.driver.OracleDriver";
-            /*String url = PropertiesUtils.getPropertyValue("url").trim();
+            String driver = "oracle.jdbc.driver.OracleDriver";*/
+            String url = PropertiesUtils.getPropertyValue("url").trim();
             String username = PropertiesUtils.getPropertyValue("username").trim();
             String password = PropertiesUtils.getPropertyValue("password").trim();
-            String driver = PropertiesUtils.getPropertyValue("driver").trim();*/
+            String driver = PropertiesUtils.getPropertyValue("driver").trim();
             try {
                 Class.forName(driver);
                 conn = DriverManager.getConnection(url, username, password);
